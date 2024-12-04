@@ -10,28 +10,27 @@ public class Leetcode_199RightSideViewOfBinaryTree {
 
 		root.left.left = new TreeNode(4);
 		root.left.left.left = new TreeNode(5);
-		
+
 		System.out.println(rightSideView(root));
-		
-		
 
 	}
+
 	public static List<Integer> rightSideView(TreeNode root) {
-        List<Integer> ans=new ArrayList<>();
-        rightView(root,ans,0);
-        return ans;
-    }
+		List<Integer> ans = new ArrayList<>();
+		rightView(root, ans, 0);
+		return ans;
+	}
 
-    public static void rightView(TreeNode root, List<Integer> ans, int level){
-        if(root==null)return;
-        if(level==ans.size()){
-            ans.add(root.val);
-        }
+	public static void rightView(TreeNode root, List<Integer> ans, int level) {
+		if (root == null)
+			return;
+		if (level == ans.size()) {
+			ans.add(root.val);
+		}
 
-        rightView(root.right, ans,level+1);
-        rightView(root.left, ans,level+1);
+		rightView(root.right, ans, level + 1);
+		rightView(root.left, ans, level + 1);
 
-
-    }
+	}
 
 }
